@@ -1,0 +1,383 @@
+{
+  "info": {
+    "_postman_id": "691009e8-83d7-490b-83e8-af4a0f4160f9",
+    "name": "Automation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "40021533",
+    "_collection_link": "https://go.postman.co/collection/40021533-691009e8-83d7-490b-83e8-af4a0f4160f9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Coding BAsics",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "let testname=\"Arnav\";\r",
+              "const testname1=\"Vaideesh\";\r",
+              "console.log(testname,testname1);\r",
+              "console.log(testname+\" \"+testname1);\r",
+              "console.log(`${testname}+${testname1}`);\r",
+              "console.log(`${testname} ${testname1}!`);\r",
+              "//console.log(`${testname} ${testname1}!`);\r",
+              "\r",
+              "let name = \"Alice\";\r",
+              "let greeting = `Hello, ${name}!`;\r",
+              "let greeting1 = `Hello, ${name}!`;\r",
+              "console.log(greeting);\r",
+              "//let greeting = `Hello, ${name}!`;\r",
+              "\r",
+              "//using if\r",
+              "\r",
+              "if (name===\"Alice\")//boolean condition TRUe or False\r",
+              "{\r",
+              "    console.log(\"TRUE\");\r",
+              "    console.log(true);\r",
+              "}\r",
+              "\r",
+              "\r",
+              "//Function\r",
+              "\r",
+              "function sayhello(){\r",
+              "    console.log(\"helleo\");\r",
+              "}\r",
+              "\r",
+              "sayhello();//you can define variables in the function sayhello(\"mamy\",30) or sayhello(name,dob)\r",
+              "//console.log(sayhello())\r",
+              "\r",
+              "console.log(sayhello()); //this will give you undefined message because you dont have return value//\r",
+              "function sayhello1()\r",
+              "{\r",
+              "    let sum = 1+1;\r",
+              "    return sum;\r",
+              "}\r",
+              "\r",
+              "console.log(sayhello1());\r",
+              "\r",
+              "\r",
+              "\r",
+              "\r",
+              "//let person ={};//this is the way we define object\r",
+              "\r",
+              "let person={\r",
+              "    firstname:\"Arnava\",\r",
+              "    lastname:\"Vai\",\r",
+              "    age:8,\r",
+              "    'E-mail':\"Arnav.via@gmail.com\" //when using special characters in property name like minus sign in email we use quotes and to get value of the property use brackets//\r",
+              "\r",
+              "\r",
+              "};\r",
+              "\r",
+              "console.log(person);\r",
+              "\r",
+              "person.email=\"arnav.vai@gamil.com\"//how to add new property to object\r",
+              "\r",
+              "console.log(person);\r",
+              "console.log(person.age);\r",
+              "console.log(person['age']);//when to use square brackets, see the person object.\r",
+              "console.log(person[\"E-mail\"]);//when to use square brackets, see the person object.\r",
+              "person[\"E-mail\"]=\"Arnav.vis@gmail.com\";\r",
+              "person['E-mail']=\"Arnav.vis@gmail.com\";\r",
+              "console.log(person[\"E-mail\"]);\r",
+              "/*How to write function in an object*/\r",
+              "\r",
+              "let person1={\r",
+              "    firstname:\"Arnava\",\r",
+              "    lastname:\"Vai\",\r",
+              "    age:8,\r",
+              "    'E-mail':\"Arnav.via@gmail.com\", //when using special characters in propert name like minus sign in email we use quotes and to get value of the property use brackets//\r",
+              "     sayhi:function(){\r",
+              "        console.log('hello welcome!');\r",
+              "       // console.log(firstname); //this will trhow error.use \"this\" or the object name\r",
+              "        console.log(this.firstname);\r",
+              "        console.log(person1.lastname);\r",
+              "     }\r",
+              "\r",
+              "};\r",
+              "person1.sayhi();\r",
+              "//console.log(person1.sayhi()); this too works as above step\r",
+              "\r",
+              "//how to convert java script object to JSON.\r",
+              "\r",
+              "//JSON.stringify  to convert java script object to JSON and JSON parse to read the values.\r",
+              "\r",
+              "let jsonval=JSON.stringify(person1);\r",
+              "console.log(jsonval);\r",
+              "console.log(typeof(jsonval))\r",
+              "jsonval=JSON.parse(jsonval)\r",
+              "console.log(typeof(jsonval))\r",
+              "console.log(jsonval);\r",
+              "console.log(jsonval.age);\r",
+              "\r",
+              "\r",
+              "//or \r",
+              "\r",
+              "let jsonval1=JSON.parse(JSON.stringify(person1));\r",
+              "console.log(jsonval1.age);\r",
+              "console.log(JSON.stringify(person1))\r",
+              "\r",
+              "//Adding array to java script object\r",
+              "\r",
+              "let person2={\r",
+              "    firstname:\"Arnava\",\r",
+              "    lastname:\"Vai\",\r",
+              "    age:8,\r",
+              "    'E-mail':\"Arnav.via@gmail.com\", //when using special characters in propert name like minus sign in email we use quotes and to get value of the property use brackets//\r",
+              "     sayhi:function(){\r",
+              "        console.log('hello welcome!');\r",
+              "       // console.log(firstname); //this will trhow error.use \"this\" or the object name\r",
+              "        console.log(this.firstname);\r",
+              "        console.log(person1.lastname);\r",
+              "      \r",
+              "     },\r",
+              "      socialprofile:[\"facebook\",\"instagram\",{},30] \r",
+              "\r",
+              "}\r",
+              "\r",
+              "console.log(person2.socialprofile[1]);\r",
+              "person2.socialprofile.push(\"Youtube\");//to add new item\r",
+              "console.log(person2.socialprofile);\r",
+              "person2.socialprofile.pop();//to delete last item\r",
+              "console.log(person2.socialprofile);\r",
+              "\r",
+              "//loops//\r",
+              "for(let i =0;i<person2.socialprofile.length ;i++)\r",
+              "{\r",
+              "    console.log(person2.socialprofile[i]);\r",
+              "}\r",
+              "\r",
+              "\r",
+              "//for loop by using for each\r",
+              "\r",
+              "person2.socialprofile.forEach(getitem)\r",
+              "\r",
+              "\r",
+              "function getitem(item, index, array)\r",
+              "{\r",
+              "    console.log(array[index]);\r",
+              "    console.log(item);\r",
+              "}\r",
+              "\r",
+              "//for each second way//\r",
+              "\r",
+              "person2.socialprofile.forEach(function(item,index,array)\r",
+              "{\r",
+              "    console.log(item);\r",
+              "});\r",
+              "\r",
+              "//using arrow functiom//\r",
+              "\r",
+              "person2.socialprofile.forEach((item,index,array)=>\r",
+              "{\r",
+              "    console.log(\"hello siva\"+item);\r",
+              "});\r",
+              "\r",
+              "//another way;\r",
+              "person2.socialprofile.forEach(console.log)\r",
+              "\r",
+              "\r",
+              "\r",
+              "\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Response status code is 200\", function () {\r",
+              "  pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "\r",
+              "pm.test(\"Response time is less than 200ms\", function () {\r",
+              "  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+              "});\r",
+              "\r",
+              "\r",
+              "pm.test(\"Response has the required fields\", function () {\r",
+              "    const responseData = pm.response.text();\r",
+              "\r",
+              "    pm.expect(responseData).to.include('title');\r",
+              "    pm.expect(responseData).to.include('meta charset');\r",
+              "    pm.expect(responseData).to.include('script');\r",
+              "    pm.expect(responseData).to.include('link');\r",
+              "    pm.expect(responseData).to.include('body');\r",
+              "});\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://petstore.swagger.io/#/user/getUserByName",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            ""
+          ],
+          "hash": "/user/getUserByName"
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "sendrequest",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "/*/pm.sendRequest()\r",
+              "try {\r",
+              "    const response = await pm.sendRequest({\r",
+              "    url: \"https://postman-echo.com/get\",\r",
+              "    method: \"GET\"\r",
+              "    });\r",
+              "\r",
+              "    console.log(response.json());\r",
+              "} catch (err) {\r",
+              "    console.error(err);\r",
+              "}//\r",
+              "*/\r",
+              "\r",
+              "console.log(\"starting\");\r",
+              "\r",
+              "pm.sendRequest(\"https://postman-echo.com/get\",function(err,response){\r",
+              "    console.log(response.json());\r",
+              "});\r",
+              "        \r",
+              "    \r",
+              "console.log(\"ending\")\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "\r",
+              "    pm.test(\"Status code is 200\", function () {\r",
+              "        pm.response.to.have.status(200);\r",
+              "    });\r",
+              "\r",
+              "\r",
+              "/*pm.test(\"Body matches string\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"string_you_want_to_search\");\r",
+              "});\r",
+              "pm.test(\"Your test name\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.value).to.eql(100);\r",
+              "});*/\r",
+              "\r",
+              "pm.test(\"Test name\", ()=> {\r",
+              "    const response = pm.response.json();\r",
+              "    pm.expect(response.name).to.eql(\"Jane\");\r",
+              "});\r",
+              "\r",
+              "const response = pm.response.json();\r",
+              "console.log(typeof(pm.response));\r",
+              "console.log(typeof(response));\r",
+              "\r",
+              "pm.test(\"check for social media\",()=>{\r",
+              "    let hasyoutube=false;\r",
+              "    response.socialMedia.forEach((item) =>{\r",
+              "    if (item===\"YouTube\")\r",
+              "       {\r",
+              "        hasyoutube=true;\r",
+              "       }\r",
+              "\r",
+              "    });\r",
+              " //pm.expect(hasyoutube===true);\r",
+              " pm.expect(hasyoutube).to.eql(true)\r",
+              " });\r",
+              "\r",
+              "\r",
+              "\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://0117e4d9f2914b64a07e82b33ce8d231.api.mockbin.io/",
+          "protocol": "https",
+          "host": [
+            "0117e4d9f2914b64a07e82b33ce8d231",
+            "api",
+            "mockbin",
+            "io"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          "let testname=\"Arnav\"\r",
+          "console.log(testname)"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "StausAvailable",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
